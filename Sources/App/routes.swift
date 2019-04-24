@@ -8,8 +8,10 @@ public func routes(_ router: Router) throws {
     }
     
     // Basic "Hello, world!" example
-    router.get("hello") { req in
-        return "Hello, world!"
+    router.get("image") { req in
+        var imageData = NSData.init(contentsOfFile: "/Users/luzizheng/Desktop/123.jpg")
+        var string = imageData?.base64EncodedString(0)
+        return string
     }
 
     // Example of configuring a controller
